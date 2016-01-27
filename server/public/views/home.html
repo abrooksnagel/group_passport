@@ -1,12 +1,30 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-    <!--<meta charset="UTF-8">-->
-    <!--<title>Home</title>-->
-<!--</head>-->
-<!--<body>-->
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="assets/styles/style.css" rel="stylesheet">
 
-<!--</body>-->
-<!--</html>-->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/styles/style.css" rel="stylesheet" />
 
-Huzzah, the user is logged in!!!
+    <script src="vendors/angular/angular.min.js" type="text/javascript"></script>
+    <script src="assets/scripts/client.min.js" type="text/javascript"></script>
+</head>
+<body ng-controller="myController">
+
+<div class="jumbotron">
+    <p>Hello {{user.first_name}}</p>
+</div>
+
+<div class="well">
+    <p>Your account balance is ${{user.account_balance}}</p>
+    <p>Your remaining car loan balance is ${{user.car_loan}}</p>
+    <p>Your remaining home loan balance is ${{user.home_loan}}</p>
+</div>
+
+<p>We highly recommend paying off your loans.</p>
+
+
+</body>
+</html>

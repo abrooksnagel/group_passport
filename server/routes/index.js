@@ -8,17 +8,20 @@ router.get('/', function(request, response){
    response.sendFile(path.join(__dirname, '../public/views/index.html'));
 });
 
-//router.get('/*', function(request, response, next) {
-//   if(request.isAuthenticated()) {
-//      next();
-//   } else {
-//      response.redirect('/login');
-//   }
-//});
-
 router.get('/fail', function(request, response) {
    response.sendFile(path.join(__dirname, '../public/views/fail.html'));
 });
+
+/////// We whacked this out since we allowed for reauthenticate through our fail.html /////
+router.get('/*', function(request, response, next) {
+   if(request.isAuthenticated()) {
+      next();
+   } else {
+      response.redirect('/');
+   }
+});
+
+
 
 router.get('/home', function(request, response) {
    console.log('Request user on success route', request.user);

@@ -1,0 +1,7 @@
+.jumbotron {
+    background-color: orangered;
+}
+
+p, form {
+    padding: 0 15px;
+}
